@@ -7,11 +7,12 @@
   --dark-background-color: #2f303a;
   --secondary-background-color: #f5f4fa;
   --borde-line-color: #ececec;
-  --icon-color: #757575;
+  --icon-color: #AFB1B8;
   --easy-go: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
+  width: 1600px;
   margin: 0 auto;
   color: var(--primary-text-color);
   background-color: var(--main-background-color);
@@ -24,6 +25,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+img {
+  display: block;
 }
 
 h1,
@@ -107,10 +112,11 @@ p {
   display: flex;
   justify-content: center;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 0%;
   height: 4px;
   background-color: #2196f3;
+  border-radius: 2px;
   transition: width var(--easy-go);
 }
 
@@ -172,6 +178,7 @@ p {
 /* Банер */
 .banner {
   padding: 200px 0px;
+  /* width: 1600px; */
   align-content: center;
   background-color: var(--dark-background-color);
   background-position: center;
@@ -207,59 +214,6 @@ p {
   border: none;
   color: var(--white-text-color);
   background-color: var(--accent-text-color);
-}
-
-/* Модальне вікно */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transform: opacity var(--easy-go);
-}
-
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0, 9);
-}
-
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transform: translate(-50%, -50%) scale(0);
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  min-width: 528px;
-  min-height: 581px;
-  padding: 40px;
-  overflow: auto;
-  background-color: var(--main-background-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  transition: transform var(--easy-go);
-
-}
-
-.close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: var(--main-background-color);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background-image: url(../images/close.svg);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /* Секція переваг */
@@ -461,6 +415,59 @@ p {
   fill: var(--accent-text-color);
 }
 
+/* Модальне вікно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity var(--easy-go);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0, 9);
+  visibility: hidden;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  /* visibility: hidden; */
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  min-width: 528px;
+  min-height: 581px;
+  padding: 40px;
+  overflow: auto;
+  background-color: var(--main-background-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  transition: transform var(--easy-go), opacity var(--easy-go);
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--main-background-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-image: url(../images/close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /* Сторінка Портфоліо */
 /* Ховаємо заголовок */
 .block {
@@ -471,6 +478,7 @@ p {
 .btn {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .btn .sort {
@@ -485,8 +493,6 @@ p {
   padding: 6px 22px;
   border-radius: 4px;
   border-style: none;
-  margin-right: 8px;
-  margin-bottom: 50px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
@@ -502,6 +508,7 @@ p {
 .btn button:focus {
   color: var(--white-text-color);
   background-color: var(--accent-text-color);
+  cursor: pointer;
 }
 
 /* Реалізовані проекти компанії */
@@ -588,7 +595,6 @@ p {
 
 .projects-link:hover .text-project,
 .projects-link:focus .text-project {
-  color: var(--accent-text-color);
   transform: translateY(0%);
   transition: transform var(--easy-go);
 }

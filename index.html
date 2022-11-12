@@ -53,17 +53,17 @@
           Ефективні рішення для <br />
           вашого бізнесу
         </h1>
-
+        
         <!-- Форма замовлення на сторінці без переходу на іншу-->
         <!-- Модальне вікно відкриття -->
         <button type="button" class="order" data-modal-open>Замовити послугу</button>
-        <div class="backdrop is-hidden" data-modal>
+        <!-- <div class="backdrop is-hidden" data-modal>
           <div class="modal">
-            <button type="button" class="close-btn" data-modal-close></button>
-          </div>
-        </div>
-      </div>
-    </section>
+             <button type="button" class="close-btn" data-modal-close></button>
+          </div> 
+      </div> -->
+            </div>
+          </section>  
 
     <!--Переваги.Заголовок не відображається -->
     <section class="section">
@@ -325,7 +325,11 @@
       </div>
     </section>
   </main>
-
+  <div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+       <button type="button" class="close-btn" data-modal-close></button>
+    </div> 
+</div>
   <!-- Контакти -->
   <footer class="footer">
     <div class="container info">
@@ -384,6 +388,6 @@
   </footer>
   <script src="./js/modal.js"></script>
 
-</body>
+  </body>
 
 </html>
